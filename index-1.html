@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050914">
+<title>GADGET HUNTER | Official Online Store</title>
+<style>
+:root{--bg:#050914;--panel:#0b1425;--panel2:#101d33;--blue:#13bfff;--cyan:#00e5ff;--text:#f3f8ff;--muted:#9fb1c8;--line:#1b3552;--glow:0 0 22px #00bfff30}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#12345a 0,transparent 48%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:10;background:#050914eF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:900;letter-spacing:1.5px;font-size:20px}.brand span{color:var(--cyan);text-shadow:0 0 16px #00cfff}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:3px;font-weight:600}
+.nav-actions{display:flex;gap:9px}.btn{border:1px solid #1679a8;background:linear-gradient(135deg,#0879b8,#06436e);color:white;padding:10px 15px;border-radius:11px;font-weight:750;box-shadow:var(--glow)}.btn.secondary{background:#101c2e;border-color:var(--line);box-shadow:none}.btn.danger{background:#531e2b;border-color:#9a3850}.hero{padding:52px 0 34px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:2px;font-size:12px}.hero h1{font-size:clamp(34px,6vw,64px);line-height:1.08;margin:12px 0}.hero h1 em{font-style:normal;color:var(--cyan);text-shadow:0 0 24px #00cfff55}.hero p{color:var(--muted);max-width:590px;line-height:1.8}.hero-art{min-height:230px;border:1px solid #14628c;border-radius:24px;background:linear-gradient(145deg,#0b2541,#07101f 65%);display:grid;place-items:center;box-shadow:var(--glow);position:relative;overflow:hidden}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #00cfff40;border-radius:50%;width:240px;height:240px}.hero-art:after{width:180px;height:180px}.hero-art strong{font-size:54px;color:var(--cyan);text-shadow:0 0 30px #00cfff;z-index:1}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 20px}.toolbar input,.field,textarea,select{width:100%;background:#07111f;border:1px solid var(--line);border-radius:10px;padding:12px;color:var(--text);outline:none}.toolbar input{flex:1;min-width:180px}.toolbar select{width:auto;min-width:140px}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin:24px 0 14px}.section-title h2{margin:0;font-size:25px}.section-title p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding-bottom:34px}.product{background:linear-gradient(160deg,#101d31,#08111f);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.2s}.product:hover{transform:translateY(-3px);border-color:#168fc0;box-shadow:var(--glow)}.photo{height:185px;background:#07111f;display:grid;place-items:center;color:#52708e;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.photo .placeholder{font-size:42px;color:#1b8ab5}.pinfo{padding:14px}.pinfo h3{margin:0 0 7px;font-size:16px}.desc{color:var(--muted);font-size:12px;min-height:34px}.price{color:var(--cyan);font-size:21px;font-weight:900;margin:10px 0}.pinfo .btn{width:100%}
+.empty{grid-column:1/-1;text-align:center;padding:42px 12px;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px;text-align:center}
+.overlay{position:fixed;inset:0;background:#000b;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.overlay.show{display:flex}.modal{width:min(650px,100%);max-height:90vh;overflow:auto;background:#0a1424;border:1px solid #17628a;border-radius:18px;padding:20px;box-shadow:0 0 40px #00bfff30}.modal h2{margin:0 0 14px}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.x{border:0;background:#1b2b40;color:white;border-radius:8px;padding:7px 11px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.formgrid .full{grid-column:1/-1}.label{display:block;color:var(--muted);font-size:12px;margin:9px 0 5px}.cartline{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}.qty{display:flex;align-items:center;gap:7px}.qty button{background:#14253a;border:1px solid var(--line);color:white;border-radius:7px;padding:3px 9px}.note{font-size:12px;color:var(--muted);line-height:1.6}.admin-tabs{display:flex;gap:8px;margin:14px 0}.admin-tabs button{flex:1}.admin-list{display:grid;gap:8px}.admin-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#101d30;padding:10px;border-radius:10px}.admin-row small{color:var(--muted)}.hidden{display:none!important}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr}.hero-art{min-height:160px}.hero-art strong{font-size:42px}}
+@media(max-width:600px){.wrap{padding:0 13px}.nav{min-height:62px}.brand{font-size:17px}.nav-actions .btn{padding:8px 10px;font-size:12px}.hero{padding:34px 0 22px}.hero-art{min-height:125px}.hero-art strong{font-size:34px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.photo{height:145px}.pinfo{padding:11px}.pinfo h3{font-size:14px}.price{font-size:18px}.formgrid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}.section-title h2{font-size:21px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="brand"><span>GADGET</span> HUNTER<small>OFFICIAL ONLINE STORE</small></div>
+  <div class="nav-actions"><button class="btn secondary" onclick="openAdmin()">অ্যাডমিন</button><button class="btn" onclick="openCart()">কার্ট <span id="cartCount">0</span></button></div>
+</div></header>
+<main class="wrap">
+<section class="hero">
+ <div><div class="eyebrow">TECH • GADGETS • ACCESSORIES</div><h1>আপনার পছন্দের<br><em>গ্যাজেট এখন এক জায়গায়</em></h1><p>GADGET HUNTER-এ স্বাগতম। পছন্দের গ্যাজেট বেছে নিন, কার্টে যোগ করুন এবং সহজেই অর্ডার করুন।</p><button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">প্রোডাক্ট দেখুন ↓</button></div>
+ <div class="hero-art"><strong>GH</strong></div>
+</section>
+<div class="section-title" id="products"><div><h2>আমাদের প্রোডাক্ট</h2><p>আপনার পছন্দের গ্যাজেট খুঁজে নিন</p></div></div>
+<div class="toolbar"><input id="search" placeholder="প্রোডাক্ট খুঁজুন..." oninput="renderProducts()"><select id="sort" onchange="renderProducts()"><option value="default">সাজানো: ডিফল্ট</option><option value="low">দাম: কম থেকে বেশি</option><option value="high">দাম: বেশি থেকে কম</option></select></div>
+<div class="grid" id="productGrid"></div>
+</main>
+<footer><div class="wrap">© <span id="year"></span> GADGET HUNTER • Official Online Store<br>অর্ডার সহায়তা: 01817695048</div></footer>
+
+<div class="overlay" id="cartModal"><div class="modal"><div class="modal-head"><h2>আপনার কার্ট</h2><button class="x" onclick="closeModal('cartModal')">বন্ধ</button></div><div id="cartItems"></div><div class="price" id="cartTotal">মোট: ৳০</div><h3>অর্ডারের তথ্য</h3><div class="formgrid"><div><label class="label">আপনার নাম</label><input class="field" id="buyerName" placeholder="নাম"></div><div><label class="label">মোবাইল নম্বর</label><input class="field" id="buyerPhone" placeholder="01XXXXXXXXX"></div><div class="full"><label class="label">সম্পূর্ণ ঠিকানা</label><textarea id="buyerAddress" rows="2" placeholder="বাসা, এলাকা, জেলা"></textarea></div></div><p class="note">অর্ডার WhatsApp-এ পাঠানো হবে। ডেলিভারি চার্জ ঠিকানা অনুযায়ী আলাদাভাবে নিশ্চিত করা হবে।</p><button class="btn" style="width:100%" onclick="sendOrder()">WhatsApp-এ অর্ডার পাঠান</button></div></div>
+
+<div class="overlay" id="adminModal"><div class="modal"><div class="modal-head"><h2>অ্যাডমিন প্যানেল</h2><button class="x" onclick="closeModal('adminModal')">বন্ধ</button></div><div id="adminLogin"><p class="note">অ্যাডমিন প্যানেল খুলতে পাসওয়ার্ড দিন। প্রথমবারের ডিফল্ট পাসওয়ার্ড: <b>hunter123</b> — লগইন করার পর পরিবর্তন করুন।</p><label class="label">পাসওয়ার্ড</label><input class="field" id="adminPass" type="password" placeholder="পাসওয়ার্ড"><button class="btn" style="margin-top:12px" onclick="loginAdmin()">লগইন</button></div>
+<div id="adminBody" class="hidden"><div class="admin-tabs"><button class="btn secondary" onclick="showAdminTab('add')">প্রোডাক্ট যোগ</button><button class="btn secondary" onclick="showAdminTab('manage')">প্রোডাক্ট পরিচালনা</button><button class="btn secondary" onclick="showAdminTab('settings')">সেটিংস</button></div>
+<div id="adminAdd"><h3>নতুন প্রোডাক্ট</h3><div class="formgrid"><div class="full"><label class="label">প্রোডাক্টের নাম</label><input class="field" id="pName"></div><div><label class="label">দাম (টাকা)</label><input class="field" id="pPrice" type="number" min="0"></div><div><label class="label">ছবির লিংক</label><input class="field" id="pImage" placeholder="https://..."></div><div class="full"><label class="label">বর্ণনা</label><textarea id="pDesc" rows="2"></textarea></div></div><button class="btn" style="margin-top:12px" onclick="addProduct()">প্রোডাক্ট সংরক্ষণ</button></div>
+<div id="adminManage" class="hidden"><h3>প্রোডাক্ট তালিকা</h3><div class="admin-list" id="adminList"></div></div>
+<div id="adminSettings" class="hidden"><h3>অ্যাডমিন সেটিংস</h3><label class="label">নতুন পাসওয়ার্ড</label><input class="field" id="newPass" type="password"><button class="btn" style="margin-top:10px" onclick="changePass()">পাসওয়ার্ড পরিবর্তন</button><p class="note">এই ডেমো সংস্করণে প্রোডাক্ট ও সেটিংস এই ব্রাউজারের স্টোরেজে থাকে। অন্য ডিভাইসে স্বয়ংক্রিয়ভাবে সিঙ্ক হয় না। স্থায়ী অনলাইন অ্যাডমিন ও অর্ডার ডাটাবেসের জন্য আলাদা সার্ভার/ডাটাবেস সংযোগ প্রয়োজন।</p><button class="btn secondary" onclick="exportBackup()">ব্যাকআপ ডাউনলোড</button></div>
+</div></div></div>
+<script>
+const STORE_KEY='gh_products_v1', PASS_KEY='gh_admin_pass_v1';
+const defaults=[
+ {id:1,name:'RX3 Plush Type-C Gaming Headset',price:0,desc:'আপনার পছন্দের গেমিং হেডসেট',image:''},
+ {id:2,name:'RGB Neon Rope Light 5M',price:0,desc:'গেমিং সেটআপের জন্য RGB লাইট',image:''},
+ {id:3,name:'Wireless Power Bank',price:0,desc:'দৈনন্দিন ব্যবহারের জন্য',image:''},
+ {id:4,name:'Hoco M105',price:0,desc:'স্টাইলিশ ও ব্যবহারবান্ধব গ্যাজেট',image:''}
+];
+let products=JSON.parse(localStorage.getItem(STORE_KEY)||'null')||defaults;
+let cart={};
+function save(){localStorage.setItem(STORE_KEY,JSON.stringify(products))}
+function money(n){return '৳'+Number(n||0).toLocaleString('bn-BD')}
+function renderProducts(){let q=document.getElementById('search').value.toLowerCase(),arr=products.filter(p=>(p.name+' '+p.desc).toLowerCase().includes(q));let s=document.getElementById('sort').value;if(s==='low')arr.sort((a,b)=>a.price-b.price);if(s==='high')arr.sort((a,b)=>b.price-a.price);let g=document.getElementById('productGrid');g.innerHTML='';if(!arr.length){g.innerHTML='<div class="empty">কোনো প্রোডাক্ট পাওয়া যায়নি।</div>';return}arr.forEach(p=>{let el=document.createElement('article');el.className='product';el.innerHTML=`<div class="photo">${p.image?`<img src="${escapeHtml(p.image)}" alt="">`:'<span class="placeholder">GADGET</span>'}</div><div class="pinfo"><h3>${escapeHtml(p.name)}</h3><div class="desc">${escapeHtml(p.desc||'')}</div><div class="price">${p.price>0?money(p.price):'দাম জানতে যোগাযোগ করুন'}</div><button class="btn" onclick="addCart(${p.id})">কার্টে যোগ করুন</button></div>`;g.appendChild(el)})}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function addCart(id){cart[id]=(cart[id]||0)+1;updateCount();openCart()}
+function updateCount(){document.getElementById('cartCount').textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
+function openCart(){document.getElementById('cartModal').classList.add('show');renderCart()}
+function renderCart(){let box=document.getElementById('cartItems'),total=0;box.innerHTML='';Object.entries(cart).forEach(([id,qty])=>{let p=products.find(x=>x.id==id);if(!p)return;total+=p.price*qty;let row=document.createElement('div');row.className='cartline';row.innerHTML=`<div><b>${escapeHtml(p.name)}</b><br><small>${money(p.price)} × ${qty}</small></div><div class="qty"><button onclick="changeQty(${id},-1)">−</button>${qty}<button onclick="changeQty(${id},1)">+</button></div>`;box.appendChild(row)});if(!box.children.length)box.innerHTML='<p class="note">কার্ট খালি। আগে প্রোডাক্ট যোগ করুন।</p>';document.getElementById('cartTotal').textContent='মোট: '+money(total)}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCount();renderCart()}
+function sendOrder(){let items=Object.entries(cart).map(([id,q])=>{let p=products.find(x=>x.id==id);return p?`${p.name} × ${q} = ${money(p.price*q)}`:''}).filter(Boolean);if(!items.length){alert('আগে কার্টে প্রোডাক্ট যোগ করুন।');return}let name=document.getElementById('buyerName').value.trim(),phone=document.getElementById('buyerPhone').value.trim(),address=document.getElementById('buyerAddress').value.trim();if(!name||!phone||!address){alert('নাম, মোবাইল নম্বর ও ঠিকানা পূরণ করুন।');return}let total=Object.entries(cart).reduce((s,[id,q])=>s+(products.find(p=>p.id==id)?.price||0)*q,0);let msg=`GADGET HUNTER অর্ডার%0Aনাম: ${encodeURIComponent(name)}%0Aমোবাইল: ${encodeURIComponent(phone)}%0Aঠিকানা: ${encodeURIComponent(address)}%0A%0A${encodeURIComponent(items.join('\n'))}%0Aমোট: ${encodeURIComponent(money(total))}`;window.open('https://wa.me/8801817695048?text='+msg,'_blank')}
+function openAdmin(){document.getElementById('adminModal').classList.add('show');document.getElementById('adminLogin').classList.remove('hidden');document.getElementById('adminBody').classList.add('hidden')}
+function loginAdmin(){let pass=localStorage.getItem(PASS_KEY)||'hunter123';if(document.getElementById('adminPass').value===pass){document.getElementById('adminLogin').classList.add('hidden');document.getElementById('adminBody').classList.remove('hidden');renderAdmin()}else alert('পাসওয়ার্ড সঠিক নয়।')}
+function showAdminTab(t){['add','manage','settings'].forEach(x=>document.getElementById('admin'+x[0].toUpperCase()+x.slice(1)).classList.toggle('hidden',x!==t));if(t==='manage')renderAdmin()}
+function addProduct(){let name=document.getElementById('pName').value.trim(),price=Number(document.getElementById('pPrice').value),image=document.getElementById('pImage').value.trim(),desc=document.getElementById('pDesc').value.trim();if(!name||price<0||!Number.isFinite(price)){alert('নাম ও সঠিক দাম দিন।');return}products.push({id:Date.now(),name,price,desc,image});save();renderProducts();['pName','pPrice','pImage','pDesc'].forEach(id=>document.getElementById(id).value='');alert('প্রোডাক্ট যোগ হয়েছে।')}
+function renderAdmin(){let l=document.getElementById('adminList');l.innerHTML='';products.forEach(p=>{let r=document.createElement('div');r.className='admin-row';r.innerHTML=`<div><b>${escapeHtml(p.name)}</b><br><small>${money(p.price)}</small></div><button class="btn danger" onclick="deleteProduct(${p.id})">মুছুন</button>`;l.appendChild(r)})}
+function deleteProduct(id){if(confirm('এই প্রোডাক্টটি মুছবেন?')){products=products.filter(p=>p.id!==id);save();renderProducts();renderAdmin()}}
+function changePass(){let p=document.getElementById('newPass').value;if(p.length<6){alert('কমপক্ষে ৬ অক্ষরের পাসওয়ার্ড দিন।');return}localStorage.setItem(PASS_KEY,p);document.getElementById('newPass').value='';alert('এই ব্রাউজারে পাসওয়ার্ড পরিবর্তন হয়েছে।')}
+function exportBackup(){let blob=new Blob([JSON.stringify(products,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gadget-hunter-backup.json';a.click();URL.revokeObjectURL(a.href)}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('show')}));
+document.getElementById('year').textContent=new Date().getFullYear();renderProducts();
+</script>
+</body></html>
